@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class Tab1Page {
-  constructor() {}
+  constructor() { }
 
   alertButtons = ['OK'];
 
@@ -19,8 +19,9 @@ export class Tab1Page {
   res = '';
 
   calculoParcela() {
+    this.taxa = this.taxa / 100
     this.valorParcela =
-    (this.valor * this.taxa) / 1 - (1 + this.taxa) ** (-1 * this.meses);
+      (this.valor * this.taxa) / 1 - (1 + this.taxa) ** (-1 * this.meses);
 
     this.valorArredondado = this.valorParcela.toFixed(2)
 

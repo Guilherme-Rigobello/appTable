@@ -9,9 +9,22 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Investimento</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <div>
+
+    <ion-item>
+      <ion-input label="Valor do Investimento:" type="number" [(ngModel)]="valorInvestimento"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Período do Investimentos" type="number" [(ngModel)]="periodo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Taxa de Juros Anual (%):" type="number" [(ngModel)]="juros"></ion-input>
+    </ion-item>
+    <ion-button shape="rounded" id="verificar" (click)="calculoInvestimento()">Calcular Investimento</ion-button>
+    <ion-label>Investimento: <strong>R${{valorInvestimentoArredondado}}</strong> </ion-label>
+  </div>
 </ion-content>

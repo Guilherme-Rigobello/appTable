@@ -13,9 +13,10 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-alert trigger="verificar" header="Seus Resultados:" message={{res}} [buttons]="alertButtons">
+  <ion-alert trigger="avaliacao" header="Avaliação Automática:" message={{res}} [buttons]="alertButtons">
   </ion-alert>
   <div>
+
     <ion-item>
       <ion-input label="Valor do Empréstimo:" type="number" [(ngModel)]="valor"></ion-input>
     </ion-item>
@@ -23,10 +24,10 @@
       <ion-input label="Qtd. Meses:" type="number" [(ngModel)]="meses"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input label="Taxa de Juros Anual (%):" type="number" [(ngModel)]="taxa"></ion-input>
+      <ion-input label="Taxa de Juros Mensal (%):" type="number" [(ngModel)]="taxa"></ion-input>
     </ion-item>
-    <ion-button shape="rounded" id="verificar" (click)="calculoParcela()">Calcular Parcela</ion-button>
-    <ion-label>Valor da Parcela: <strong>R${{valorArredondado}}</strong> </ion-label>
+    <ion-button shape="rounded" id="avaliacao" (click)="calculoParcela()">Calcular Parcela</ion-button>
+    <ion-label>Parcela: <strong>R${{valorArredondado}}</strong> </ion-label>
   </div>
 
 </ion-content>

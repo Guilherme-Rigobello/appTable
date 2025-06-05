@@ -8,6 +8,15 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor() { }
+  alertButtons = ['OK'];
+  valorInvestimento = 0
+  periodo = 0
+  juros = 0
+  valorInvestimentoArredondado = 0
+
+  calculoInvestimento() {
+
+  }
 
 }
