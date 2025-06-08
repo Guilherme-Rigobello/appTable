@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class Tab1Page {
-  constructor() { }
+  constructor() {}
 
   alertButtons = ['OK'];
 
@@ -15,19 +15,32 @@ export class Tab1Page {
   taxa = 0;
   valor = 0;
   valorParcela = 0;
-  valorArredondado = ''
+  valorArredondado = '';
+  taxaAnualInserida = 0;
+  taxaMensalDecimal = 0;
   res = '';
 
   calculoParcela() {
-    this.taxa = this.taxa / 100
-    this.valorParcela =
-      (this.valor * this.taxa) / 1 - (1 + this.taxa) ** (-1 * this.meses);
+    if (this.valor <= 0 || this.meses <= 0 || this.taxa <= 0) {
+      alert('Insira todas as credenciais corretamente!');
+      return;
+    }
 
-    this.valorArredondado = this.valorParcela.toFixed(2)
+    this.taxaAnualInserida = this.taxa;
+    this.taxaMensalDecimal = this.taxaAnualInserida / 100 / 12;
+
+    this.valorParcela =
+      (this.valor *
+        this.taxaMensalDecimal *
+        Math.pow(1 + this.taxaMensalDecimal, this.meses)) /
+      (Math.pow(1 + this.taxaMensalDecimal, this.meses) - 1);
+
+    this.valorArredondado = this.valorParcela.toFixed(2);
 
     if (this.taxa > 20) {
       this.res = `Seu empréstimo é arriscado! `;
+    } else {
+      this.res = `Faça uma avaliação mais cuidadosa!`;
     }
-    else (this.res = `Faça uma avaliação mais cuidadosa!`);
   }
 }

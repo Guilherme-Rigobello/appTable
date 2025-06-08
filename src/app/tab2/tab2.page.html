@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title> 📈 Investimentos </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,17 +12,34 @@
   </ion-header>
 
   <div>
-
     <ion-item>
-      <ion-input label="Valor do Investimento:" type="number" [(ngModel)]="valorInvestimento"></ion-input>
+      <ion-input
+        label="Valor do Investimento:"
+        type="number"
+        [(ngModel)]="valorInvestimento"
+      ></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input label="Período do Investimentos" type="number" [(ngModel)]="periodo"></ion-input>
+      <ion-input
+        label="Período (Anos)"
+        type="number"
+        [(ngModel)]="periodo"
+      ></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input label="Taxa de Juros Anual (%):" type="number" [(ngModel)]="juros"></ion-input>
+      <ion-input
+        label="Taxa de Juros Anual (%):"
+        type="number"
+        [(ngModel)]="retorno"
+      ></ion-input>
     </ion-item>
-    <ion-button shape="rounded" id="verificar" (click)="calculoInvestimento()">Calcular Investimento</ion-button>
-    <ion-label>Investimento: <strong>R${{valorInvestimentoArredondado}}</strong> </ion-label>
+    <ion-button shape="rounded" id="verificar" (click)="calculoInvestimento()"
+      >Calcular Investimento</ion-button
+    >
+    <ion-label
+      >Montante Final:
+      <strong>R${{valorInvestimentoArredondado}}</strong> <br> <br> Retorno líquido:
+      <strong>R${{valorLiquidoArredondado}}</strong>
+    </ion-label>
   </div>
 </ion-content>
