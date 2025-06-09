@@ -13,12 +13,11 @@ export class Tab2Page {
   periodo = 0;
   retorno = 0;
   valorInvestimentoArredondado = '';
-  valorLiquidoArredondado = '';
   valorInvestimentoFinal = 0;
   r = 0;
   t = 0;
   montante = 0;
-  liquido = 0;
+  res = ''
 
   calculoInvestimento() {
     if (this.valorInvestimento <= 0 || this.periodo <= 0 || this.retorno <= 0) {
@@ -33,7 +32,13 @@ export class Tab2Page {
     this.valorInvestimentoFinal = this.montante;
     this.valorInvestimentoArredondado = this.valorInvestimentoFinal.toFixed(2);
 
-    this.liquido = this.montante - this.valorInvestimento;
-    this.valorLiquidoArredondado = this.liquido.toFixed(2);
+    if(this.retorno > 15){
+    this.res = `⚠️ Provável investimento de alto risco ⚠️. Montante Final: R$${this.valorInvestimentoArredondado}`
+    } else if (this.retorno < 15) {
+       this.res = `🔐 Invista em renda fixa ou cdb's . Montante Final: R$${this.valorInvestimentoArredondado}`
+    } else {
+       this.res = `Não é possível calcular o seu investimento.`
+    }
+
   }
 }

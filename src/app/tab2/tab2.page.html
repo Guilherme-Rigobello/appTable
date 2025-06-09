@@ -11,6 +11,14 @@
     </ion-toolbar>
   </ion-header>
 
+   <ion-alert
+    trigger="avaliacao"
+    header="Avaliação dos Resultados:"
+    message="{{res}}"
+    [buttons]="alertButtons"
+  >
+  </ion-alert>
+
   <div>
     <ion-item>
       <ion-input
@@ -33,13 +41,8 @@
         [(ngModel)]="retorno"
       ></ion-input>
     </ion-item>
-    <ion-button shape="rounded" id="verificar" (click)="calculoInvestimento()"
+    <ion-button shape="rounded" id="avaliacao"  (click)="calculoInvestimento()"
       >Calcular Investimento</ion-button
     >
-    <ion-label
-      >Montante Final:
-      <strong>R${{valorInvestimentoArredondado}}</strong> <br> <br> Retorno líquido:
-      <strong>R${{valorLiquidoArredondado}}</strong>
-    </ion-label>
   </div>
 </ion-content>

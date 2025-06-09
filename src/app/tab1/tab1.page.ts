@@ -38,9 +38,9 @@ export class Tab1Page {
     this.valorArredondado = this.valorParcela.toFixed(2);
 
     if (this.taxa > 20) {
-      this.res = `Seu empréstimo é arriscado! `;
+      this.res = `Valor da sua parcela R$${this.valorArredondado}. Seu empréstimo é arriscado! `;
     } else {
-      this.res = `Faça uma avaliação mais cuidadosa!`;
+      this.res = `Valor da sua parcela R$${this.valorArredondado}. Faça uma avaliação mais cuidadosa!`;
     }
   }
 }

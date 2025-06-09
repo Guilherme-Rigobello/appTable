@@ -13,7 +13,7 @@
 
   <ion-alert
     trigger="avaliacao"
-    header="Avaliação Automática:"
+    header="Avaliação dos Resultados:"
     message="{{res}}"
     [buttons]="alertButtons"
   >
@@ -43,8 +43,5 @@
     <ion-button shape="rounded" id="avaliacao" (click)="calculoParcela()"
       >Calcular Parcela</ion-button
     >
-    <ion-label
-      >Valor da Parcela: <strong>R${{valorArredondado}}</strong>
-    </ion-label>
   </div>
 </ion-content>
